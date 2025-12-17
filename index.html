@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn How to Fly in 4 Weeks. The ultimate digital guide to unlocking human flight. Download the ebook now and start your journey to freedom.">
+    <title>Learn How to Fly in 4 Weeks | The Ultimate Guide</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* [UX Requirement] Color Scheme: Flying, Freedom (Blues, Whites) */
+        :root {
+            --primary-blue: #00a8e8; /* Sky Blue */
+            --dark-blue: #003459;   /* Deep Sky */
+            --white: #ffffff;
+            --light-gray: #f0f8ff;  /* Alice Blue */
+            --cta-red: #e63946;     /* [UX Requirement] Red Button/Contrast */
+            --text-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* [SEO Requirement] Smooth scroll for anchor links */
+        }
+
+        /* [UX Requirement] Hierarchy - Headings */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-blue);
+        }
+
+        /* [SEO Requirement] Semantic Header */
+        header {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* [Sales Tunnel 1] Awareness: Hero Section */
+        #hero {
+            margin-top: 60px;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 90vh;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 2rem;
+        }
+
+        /* [SEO Requirement] One Main H1 */
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            /* [UX Requirement] Micro-interaction on hover */
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: translateY(-10px);
+        }
+
+        /* [UX Requirement] Red Button / Keywords Friendly CTA */
+        .btn {
+            display: inline-block;
+            background-color: var(--cta-red);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #c92a37;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.6);
+        }
+
+        /* [Sales Tunnel 2] Interest: Benefits Section */
+        #benefits {
+            padding: 4rem 5%;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        #benefits h2 {
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 10px;
+            background: var(--light-gray);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* [Sales Tunnel 3] Trust: Reviews Section */
+        #reviews {
+            padding: 4rem 5%;
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .reviews-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            position: relative;
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .quote {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        /* About Author Section */
+        #author {
+            padding: 4rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .author-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-blue);
+        }
+
+        .author-bio {
+            max-width: 600px;
+        }
+
+        /* [Sales Tunnel 4] Action: Checkout Section */
+        #checkout {
+            padding: 5rem 5%;
+            background: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+        }
+
+        #checkout h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .price-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 2rem 0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .secure-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .lock-icon {
+            width: 16px;
+            height: 16px;
+            fill: #ccc;
+        }
+
+        /* [UX Requirement] Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .hero-content { padding-right: 0; text-align: center; margin-bottom: 2rem; }
+            #hero { flex-direction: column; }
+            nav { display: none; } /* Simplified for mobile, ideally hamburger menu */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">FLY ACADEMY</a>
+        <nav>
+            <a href="#benefits">Benefits</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#author">Author</a>
+            <a href="#checkout">Buy Now</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Learn How To Fly <br><span style="color:var(--primary-blue)">In 4 Weeks</span></h1>
+                
+                <p class="subtitle">Defy gravity and unlock your true potential. The step-by-step digital guide to human flight.</p>
+                
+                <a href="#checkout" class="btn">Download the Flying Guide</a>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1506434304575-afbb92660c29?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Book Cover: Learn How to Fly in 4 Weeks - Man flying in the sky">
+            </div>
+        </section>
+
+        <section id="benefits">
+            <h2>Why This Book?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🚀</span>
+                    <h3>Gravity Defying Techniques</h3>
+                    <p>Learn the secret physics-bending methods used by the pros to lift off effortlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🧠</span>
+                    <h3>Mindset Mastery</h3>
+                    <p>Flight starts in the mind. Rewire your brain to accept 3D movement.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">☁️</span>
+                    <h3>Safe Landing Strategies</h3>
+                    <p>Going up is optional, coming down is mandatory. Learn to land like a feather.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>4-Week Plan</h3>
+                    <p>A structured daily schedule to go from pedestrian to aviator in one month.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <h2 class="section-title">What Our Pilots Say</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"I never thought it was possible until I read Chapter 3. Now I commute to work by air!"</p>
+                    <p class="author-name">- Alex Johnson</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"The diagrams are so clear. I was hovering within the first week. Highly recommended!"</p>
+                    <p class="author-name">- Maria Garcia</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Finally, a guide that doesn't just talk theory but gives you practical exercises."</p>
+                    <p class="author-name">- David Kim</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Portrait of the author, Captain Sky" class="author-img">
+            <div class="author-bio">
+                <h2>Meet the Instructor</h2>
+                <p><strong>Captain J. Sky</strong> has spent over 20 years researching aerodynamics and human potential. After his historic flight across the Atlantic without a plane, he dedicated his life to teaching others that the sky is not the limit—it's just the beginning.</p>
+            </div>
+        </section>
+
+        <section id="checkout">
+            <h2>Ready for Takeoff?</h2>
+            <p>Get instant access to the digital book and bonus video tutorials.</p>
+            
+            <div class="price-box">
+                <span style="display:block; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Launch Price</span>
+                <span class="price">$29.99</span>
+            </div>
+            
+            <br>
+            <a href="#" class="btn" style="background-color: #2ecc71; color: white;">Buy Guide Now</a>
+
+            <div class="secure-badge">
+                <svg class="lock-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-9-2c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg>
+                <span>SSL Secure Checkout & 100% Money-Back Guarantee</span>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background:#002038; color:#888; text-align:center; padding:2rem;">
+        <p>&copy; 2023 Fly Academy. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
